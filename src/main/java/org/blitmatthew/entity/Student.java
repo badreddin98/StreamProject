@@ -2,6 +2,8 @@ package org.blitmatthew.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.stream.Stream;
+
 // Student class to match the JSON structure
 public class Student {
     private int id;
@@ -143,6 +145,16 @@ public class Student {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+
+    public boolean isStemMajor() {
+        return  major.equalsIgnoreCase("Science") ||
+                major.equalsIgnoreCase("Technology") ||
+                major.equalsIgnoreCase("Engineering") ||
+                major.equalsIgnoreCase("Mathematics");
+
+    }
+
 
     // toString method for easy printing
     @Override
